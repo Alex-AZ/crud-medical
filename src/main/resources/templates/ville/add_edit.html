@@ -1,0 +1,24 @@
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Ajout / Edition Patient</title>
+    <link rel="stylesheet" href="/css/style-interne.css">
+</head>
+
+<body>
+<h1>Formulaire <span th:text="${action}"></span> d'une ville</h1>
+<hr>
+<form name="villeForm" action="" method="post">
+    <div>
+        <label>Nom de la ville : </label>
+        <input th:value="${v.nom}" type="text" name="nom">
+    </div>
+
+    <div>
+        <label>Code postal : </label>
+        <input th:value="${p.codePostal}" type="text" name="codePostal">
+    </div>
+
+    <input type="submit" value="Valider">
+</form>
+</body>
+</html>

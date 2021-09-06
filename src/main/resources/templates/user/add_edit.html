@@ -1,0 +1,34 @@
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Ajout / Edition utilisateur</title>
+    <link rel="stylesheet" href="/style-interne.css">
+</head>
+
+<body>
+<h1>Formulaire <span th:text="${action}"></span> d'un utilisateur</h1>
+<hr>
+<form name="userForm" action="" method="post">
+    <div>
+        <label>Nom : </label>
+        <input th:value="${u.nom}" type="text" name="nom">
+    </div>
+
+    <div>
+        <label>Email : </label>
+        <input th:value="${u.email}" type="email" name="mail">
+    </div>
+
+    <div>
+        <label>Mot de passe : </label>
+        <input th:value="${u.password}" type="password" name="password">
+    </div>
+
+    <div>
+        <label>Photo : </label>
+        <input th:value="${u.photo}" type="text" name="photo">
+    </div>
+
+    <input type="submit" value="Valider">
+</form>
+</body>
+</html>

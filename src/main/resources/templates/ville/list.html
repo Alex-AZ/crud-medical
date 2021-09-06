@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des villes</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+
+    <header th:insert="~{/layout/header :: header}"></header>
+
+    <h1>Liste des villes</h1><br>
+
+    <button><a href="/ville/add">Ajouter une ville</a></button><br><br>
+
+    <ul>
+        <li th:each="ville : ${lv}" th:value="${ville.id}">
+            <span th:text="${ville.id}"></span>
+            <span th:text="${ville.nom}"></span>
+            <span th:text="${ville.codePostal}"></span>
+            <form action="" method="get">
+                <a th:href="@{'/ville/edit/' + ${ville.id}}">Modifier</a>
+            </form>
+            <a th:href="@{'/ville/delete/' + ${ville.id}}">Supprimer</a>
+        </li>
+    </ul>
+
+</body>
+</html>
